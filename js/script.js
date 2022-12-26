@@ -11,42 +11,6 @@ function visibleDesc(){
 setTimeout(visibleDesc, 700)
 
 
-var cursor = document.querySelector('.cursor');
-var cursorinner = document.querySelector('.cursor2');
-var a = document.querySelectorAll('a');
-
-document.addEventListener('mousemove', function(e){
-  var x = e.clientX;
-  var y = e.clientY;
-  cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`
-});
-
-document.addEventListener('mousemove', function(e){
-  var x = e.clientX;
-  var y = e.clientY;
-  cursorinner.style.left = x + 'px';
-  cursorinner.style.top = y + 'px';
-});
-
-document.addEventListener('mousedown', function(){
-  cursor.classList.add('click');
-  cursorinner.classList.add('cursorinnerhover')
-});
-
-document.addEventListener('mouseup', function(){
-  cursor.classList.remove('click')
-  cursorinner.classList.remove('cursorinnerhover')
-});
-
-a.forEach(item => {
-  item.addEventListener('mouseover', () => {
-    cursor.classList.add('hover');
-  });
-  item.addEventListener('mouseleave', () => {
-    cursor.classList.remove('hover');
-  });
-})
-
 
 const burger = document.querySelector('.burger__icon');
 const menuUl = document.querySelector('.menu__ul');
@@ -102,8 +66,6 @@ const swiper = new Swiper('.swiper', {
         delay: 4000,
     }, 
 });
-
-
 
 
 
@@ -213,3 +175,164 @@ document.addEventListener( 'DOMContentLoaded', function () {
     let tabs = document.querySelector( '.tabs' );
     new Tabs({ node: tabs });
 });
+
+
+
+let thumbnails = document.getElementsByClassName("thumbnail");
+let overlay = document.getElementById("overlay");
+let overlayClose = document.getElementById("overlay-close");
+let overlayImage = document.getElementById("overlay-image");
+
+for (let i = 0; i < thumbnails.length; i++) { 
+//    console.log(thumbnails[i].src)
+thumbnails[i].addEventListener("click", openOverlay)
+};
+
+
+overlayClose.addEventListener("click", closeOverlay);
+
+overlay.addEventListener("keydown", overlay);
+overlayClose.addEventListener("click", closeOverlay);
+
+function closeOverlay(event) {
+if (event.keyCode !== 27) {
+    return;
+}
+    overlay.classList.toggle("open");
+}
+
+
+function closeOverlay(event){
+overlay.classList.toggle("open")
+}
+
+function openOverlay(event){
+overlay.classList.toggle("open");
+overlayImage.src = event.target.src;
+}
+
+
+
+
+
+
+
+
+const prodElement = document.querySelectorAll('.prod')
+const btnLazy = document.querySelector('.lazy__btn')
+
+
+const elem4 = prodElement[4]
+btnLazy.addEventListener("click", function(){
+    function elem4Opacity(){
+        elem4.style.opacity = '1';
+    }
+    setTimeout(elem4Opacity, 600)
+    elem4.style.display = '';
+})
+
+const elem5 = prodElement[5]
+btnLazy.addEventListener("click", function(){
+    function elem5Opacity(){
+        elem5.style.opacity = '1'; 
+    }
+    setTimeout(elem5Opacity, 600)
+    elem5.style.display = '';
+})
+
+
+const elem6 = prodElement[6]
+btnLazy.addEventListener("click", function(){
+    function elem6Opacity(){
+        elem6.style.opacity = '1';
+    }
+    setTimeout(elem6Opacity, 600)
+    elem6.style.display = '';
+})
+
+
+
+
+
+
+const elem7 = prodElement[7]
+btnLazy.addEventListener("click", function(){
+    function elem7Opacity(){
+        elem7.style.opacity = '1';
+    }
+    setTimeout(elem7Opacity, 600)
+    elem7.style.display = '';
+})
+
+const elem8 = prodElement[8]
+btnLazy.addEventListener("click", function(){
+    function elem44Opacity(){
+        elem8.style.opacity = '1';
+    }
+    setTimeout(elem44Opacity, 600)
+    elem8.style.display = '';
+})
+
+const elem9 = prodElement[9]
+btnLazy.addEventListener("click", function(){
+    function elem55Opacity(){
+        elem9.style.opacity = '1'; 
+    }
+    setTimeout(elem55Opacity, 600)
+    elem9.style.display = '';
+})
+
+const elem10 = prodElement[10]
+btnLazy.addEventListener("click", function(){
+    function elem66Opacity(){
+        elem10.style.opacity = '1';
+    }
+    setTimeout(elem66Opacity, 600)
+    elem10.style.display = '';
+})
+
+const elem11 = prodElement[11]
+btnLazy.addEventListener("click", function(){
+    function elem77Opacity(){
+        elem11.style.opacity = '1';
+    }
+    setTimeout(elem77Opacity, 600)
+    elem11.style.display = '';
+})
+
+
+
+const elem44 = prodElement[4] 
+elem44.style.opacity = '0'
+elem44.style.display = 'none';
+
+const elem55 = prodElement[5]
+elem55.style.opacity = '0'
+elem55.style.display = 'none';
+
+const elem66 = prodElement[6]
+elem66.style.opacity = '0'
+elem66.style.display = 'none';
+
+const elem77 = prodElement[7]
+elem77.style.opacity = '0'
+elem77.style.display = 'none';
+
+const elem88 = prodElement[8]
+elem88.style.opacity = '0'
+elem88.style.display = 'none';
+
+const elem99 = prodElement[9]
+elem99.style.opacity = '0'
+elem99.style.display = 'none';
+
+const elem100 = prodElement[10]
+elem100.style.opacity = '0'
+elem100.style.display = 'none';
+
+const elem110 = prodElement[11]
+elem110.style.opacity = '0'
+elem110.style.display = 'none';
+
+
+
