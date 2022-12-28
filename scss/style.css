@@ -529,8 +529,8 @@ body::-webkit-scrollbar {
   width: 100%;
   box-sizing: border-box;
   cursor: pointer;
-  max-width: 360px;
-  max-height: 360px;
+  max-width: 300px;
+  max-height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
   margin: 15px;
@@ -890,8 +890,8 @@ body::-webkit-scrollbar {
 
 @media (max-width: 768px) {
   #gallery__section #widget__gallery #gallery .wrapper__thumbnail {
-    max-width: 320px;
-    max-height: 320px;
+    max-width: 210px;
+    max-height: 210px;
   }
   #footer .footer__menu {
     display: none;
