@@ -14,10 +14,13 @@
 <body>
 
 <header id="header">
-    <div class="main__item">
-        <p class="title">Юлия Юрьевна</p>
-        <p class="desc">Авторская одежда</p>
+    <div itemscope="" itemtype="">
+        <div class="main__item">
+            <p class="title" itemprop="name">Юлия Юрьевна</p>
+            <p class="desc" itemprop="description">Авторская одежда</p>
+        </div>
     </div>
+    
     <div class="wrapp__menu">
         <div class="burger__icon">
             <span></span>
@@ -83,6 +86,7 @@
         <div class="tab-boby">
             <div class="tab-window">
                 <div class="wrapp__prod">
+
                     <div class="prod">
                         <div class="prod__img">
                             <img src="img/t1.webp" alt="">
@@ -90,20 +94,22 @@
                         <div class="prod__name">Летнее платье</div>
                         <div class="prod__size">
                             <span>Размеры:</span>
-                            S / M / L/ XL
+                            <div class="size">S / M / L/ XL</div>
                         </div>
+                        <div class="cena">15.000р</div>
                         <div class="btn__prod">Заказать</div>
                     </div>
 
                     <div class="prod">
                         <div class="prod__img">
-                            <img src="img/t2.webp" alt="">
+                            <img src="img/t1.webp" alt="">
                         </div>
-                        <div class="prod__name">Летнее платье 2</div>
+                        <div class="prod__name">Летнее платье</div>
                         <div class="prod__size">
                             <span>Размеры:</span>
-                            S / M / L/ XL
+                            <div class="size">S / M / L/ XL</div>
                         </div>
+                        <div class="cena">15.000р</div>
                         <div class="btn__prod">Заказать</div>
                     </div>
                     
@@ -111,57 +117,56 @@
                         <div class="prod__img">
                             <img src="img/t1.webp" alt="">
                         </div>
-                        <div class="prod__name">Летнее платье 3</div>
+                        <div class="prod__name">Летнее платье</div>
                         <div class="prod__size">
                             <span>Размеры:</span>
-                            S / M / L/ XL
+                            <div class="size">S / M / L/ XL</div>
                         </div>
+                        <div class="cena">15.000р</div>
+                        <div class="btn__prod">Заказать</div>
+                    </div> 
+
+                    <div class="prod">
+                        <div class="prod__img">
+                            <img src="img/t1.webp" alt="">
+                        </div>
+                        <div class="prod__name">Летнее платье</div>
+                        <div class="prod__size">
+                            <span>Размеры:</span>
+                            <div class="size">S / M / L/ XL</div>
+                        </div>
+                        <div class="cena">15.000р</div>
                         <div class="btn__prod">Заказать</div>
                     </div>
                     
                     <div class="prod">
                         <div class="prod__img">
-                            <img src="img/t2.webp" alt="">
+                            <img src="img/t1.webp" alt="">
                         </div>
-                        <div class="prod__name">Летнее платье 4</div>
+                        <div class="prod__name">Летнее платье</div>
                         <div class="prod__size">
                             <span>Размеры:</span>
-                            S / M / L/ XL
+                            <div class="size">S / M / L/ XL</div>
                         </div>
+                        <div class="cena">15.000р</div>
                         <div class="btn__prod">Заказать</div>
-                    </div>
-                    
-                    <div class="prod">
-                        <div class="prod__img">
-                            <img src="img/t2.webp" alt="">
-                        </div>
-                        <div class="prod__name">Летнее платье 4</div>
-                        <div class="prod__size">
-                            <span>Размеры:</span>
-                            S / M / L/ XL
-                        </div>
-                        <div class="btn__prod">Заказать</div>
-                    </div>
-                    
-                    <div class="prod">
-                        <div class="prod__img">
-                            <img src="img/t2.webp" alt="">
-                        </div>
-                        <div class="prod__name">Летнее платье 4</div>
-                        <div class="prod__size">
-                            <span>Размеры:</span>
-                            S / M / L/ XL
-                        </div>
-                        <div class="btn__prod">Заказать</div>
-                    </div>
+                    </div> 
+
                     
                 </div><!--WRAPP PROD-->
+                <div class="lazy__btn">Показать ещё</div>
             </div>
-            <div class="tab-window"></div>
-            <div class="tab-window"></div>
+            <!--#####-->
+            <div class="tab-window">
+                <div class="lazy__btn">Показать ещё</div>
+            </div>
+            <!--#####-->
+            <div class="tab-window">
+                <div class="lazy__btn">Показать ещё</div>
+            </div>
             
             
-            <div class="lazy__btn">Показать ещё</div>
+            
         </div>
     </div>
     
@@ -276,6 +281,36 @@
         <p>С вами скоро свяжутся</p>
     </div>
 </div>
+
+
+<div id="popup__product">
+    <div class="form__popup-prod">
+        <div class="item-prod">
+            <p class="title__form-prod">Заказать пошив</p>
+            <div class="close__form-prod">
+                <img src="img/close.webp" alt="">  
+            </div>
+        </div>
+        <input type="text" placeholder="Ваше имя" class="form__prod">
+        <input type="tel" placeholder="Ваш телефон" class="form__prod">
+        <div class="input__title">Название товара</div>
+        <input type="tel" class="form__prod names__prod" readonly="none">
+        <div class="wrapp__size"><span>Размеры: </span>
+            <div class="size__form"></div>
+        </div>
+        <input type="tel" placeholder="Укажите размер" class="form__prod">
+        <div class="input__title">Цена</div>
+        <input type="tel"  class="form__prod cena__prod"  readonly="none">
+        <button class="submit__btn-prod">Отправить</button>
+    </div>
+    <div class="valid__form-prod">
+        <div class="close__valid-prod">
+            <img src="img/close.webp" alt="">
+        </div>
+        <p>С вами скоро свяжутся</p>
+    </div>
+</div>
+
 
 <script src="js/swiper-bundle.min.js"></script>
 <script src="js/script.js"></script>
