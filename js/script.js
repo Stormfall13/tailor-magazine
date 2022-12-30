@@ -240,6 +240,37 @@ for(let i = 0; i < prodElement.length; i++){
 }
 
 
+const btnLazyAll = document.querySelectorAll('.lazy__btn')
+
+
+for(let i = 0; i < prodElement.length; i++){
+    if(i < 3){
+        for(let btnLZ of btnLazyAll){
+            btnLZ.style.display = 'none'
+        }
+        
+    } else{
+        for(let btnLZ of btnLazyAll){
+            btnLZ.style.display = ''
+        } 
+    } 
+    
+} 
+
+const wrappProdAll = document.querySelectorAll('.tab-window')
+let site = 0
+for (let wrappProd of wrappProdAll){
+    site = wrappProd.querySelectorAll('.prod').length
+    if(site > 4){
+        wrappProd.querySelector('.lazy__btn').style.display = ''
+    } else{
+        wrappProd.querySelector('.lazy__btn').style.display = 'none'
+    }  
+}
+
+
+
+
 
 
 const anchors = document.querySelectorAll('a.link__menu')
@@ -256,3 +287,71 @@ for (let anchor of anchors) {
         })
     })
 }
+
+
+
+const prodElementAll = document.querySelectorAll('.prod')
+const namesProd = document.querySelector('.names__prod')
+const cenaProd = document.querySelector('.cena__prod')
+const sizeFormActual = document.querySelector('.size__form')
+const inputFormProd = document.querySelectorAll('.form__prod')
+const submitBtnProd = document.querySelector('.submit__btn-prod')
+const formPopupProd = document.querySelector('.form__popup-prod')
+const popupProduct = document.getElementById('popup__product')
+const validFormProd = document.querySelector('.valid__form-prod')
+const closeValidProd = document.querySelector('.close__valid-prod')
+
+for ( prodElAll of prodElementAll){
+    prodElAll.addEventListener("click", function(){
+        namesProd.value = prodElAll.querySelector('.prod__name').textContent.trim()
+        cenaProd.value = prodElAll.querySelector('.cena').textContent.trim()
+        sizeFormActual.innerHTML = prodElAll.querySelector('.size').textContent
+        function popupProdOpacity(){
+            popupProduct.style.opacity = '1'
+        }
+        setTimeout(popupProdOpacity, 600)
+        popupProduct.style.display = 'block'
+    })
+    
+}
+
+const closeFormProd = document.querySelector('.close__form-prod')
+
+closeFormProd.addEventListener("click", function(){
+    namesProd.value = ''
+    cenaProd.value = ''
+    sizeFormActual.innerHTML = ''
+    for(inputFprod of inputFormProd){
+        inputFprod.value = ''
+    }
+    function popupProdOpacity(){
+        popupProduct.style.display = ''
+    }
+    setTimeout(popupProdOpacity, 600)
+    popupProduct.style.opacity = ''
+})
+
+submitBtnProd.addEventListener("click", function(){
+    formPopupProd.style.display = 'none'
+    function resetForm(){
+        namesProd.value = ''
+        cenaProd.value = ''
+        sizeFormActual.innerHTML = ''
+        for(inputFprod of inputFormProd){
+            inputFprod.value = ''
+        }
+    }
+    setTimeout(resetForm, 600)
+    validFormProd.style.display = 'flex'
+})
+
+closeValidProd.addEventListener("click", function(){
+    validFormProd.style.display = 'none'
+    function popupProdOpacity(){
+        popupProduct.style.display = ''
+        formPopupProd.style.display = ''
+    }
+    setTimeout(popupProdOpacity, 600)
+    popupProduct.style.opacity = '' 
+    
+})
