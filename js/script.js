@@ -240,22 +240,25 @@ for(let i = 0; i < prodElement.length; i++){
 }
 
 
-const btnLazyAll = document.querySelectorAll('.lazy__btn')
-
+for(let i = 0; i < prodElement.length; i++){
+    btnLazy.addEventListener("click", function(){
+        if(i > 7 && i < 500){
+            function elementOpacity_3_and_8(){
+                prodElement[i].style.opacity = '1'
+            }
+            setTimeout(elementOpacity_3_and_8, 600)
+            prodElement[i].style.display = ''
+        }         
+    })
+}
 
 for(let i = 0; i < prodElement.length; i++){
-    if(i < 3){
-        for(let btnLZ of btnLazyAll){
-            btnLZ.style.display = 'none'
-        }
-        
-    } else{
-        for(let btnLZ of btnLazyAll){
-            btnLZ.style.display = ''
-        } 
-    } 
-    
-} 
+    if(i > 7 && i < 500){
+        prodElement[i].style.display = 'none'
+        prodElement[i].style.opacity = '0'
+    }     
+}
+
 
 const wrappProdAll = document.querySelectorAll('.tab-window')
 let site = 0
@@ -289,7 +292,7 @@ for (let anchor of anchors) {
 }
 
 
-
+const btnProd = document.querySelectorAll('.btn__prod')
 const prodElementAll = document.querySelectorAll('.prod')
 const namesProd = document.querySelector('.names__prod')
 const cenaProd = document.querySelector('.cena__prod')
@@ -301,19 +304,24 @@ const popupProduct = document.getElementById('popup__product')
 const validFormProd = document.querySelector('.valid__form-prod')
 const closeValidProd = document.querySelector('.close__valid-prod')
 
-for ( prodElAll of prodElementAll){
-    prodElAll.addEventListener("click", function(){
-        namesProd.value = prodElAll.querySelector('.prod__name').textContent.trim()
-        cenaProd.value = prodElAll.querySelector('.cena').textContent.trim()
-        sizeFormActual.innerHTML = prodElAll.querySelector('.size').textContent
+
+for (let btnProdAll of btnProd){
+    btnProdAll.addEventListener("click", function(){
+        for ( prodElAll of prodElementAll){
+            namesProd.value = prodElAll.querySelector('.prod__name').textContent.trim()
+            cenaProd.value = prodElAll.querySelector('.cena').textContent.trim()
+            sizeFormActual.innerHTML = prodElAll.querySelector('.size').textContent
+            
+        } 
         function popupProdOpacity(){
             popupProduct.style.opacity = '1'
         }
         setTimeout(popupProdOpacity, 600)
         popupProduct.style.display = 'block'
     })
-    
 }
+
+
 
 const closeFormProd = document.querySelector('.close__form-prod')
 
@@ -321,7 +329,7 @@ closeFormProd.addEventListener("click", function(){
     namesProd.value = ''
     cenaProd.value = ''
     sizeFormActual.innerHTML = ''
-    for(inputFprod of inputFormProd){
+    for(let inputFprod of inputFormProd){
         inputFprod.value = ''
     }
     function popupProdOpacity(){
@@ -354,4 +362,34 @@ closeValidProd.addEventListener("click", function(){
     setTimeout(popupProdOpacity, 600)
     popupProduct.style.opacity = '' 
     
+})
+
+
+
+const overlayWindow = document.querySelector('.overlay')
+const overlayWindowClose = document.querySelector('.close__overlay')
+const prodImg = document.querySelectorAll('.prod__img')
+const prodImgItem = document.querySelectorAll('.prod__img img')
+const overlayWrapp = document.querySelector('.overlay__wrapp')
+
+
+for(let prodImgOpen of prodImg){
+    prodImgOpen.addEventListener("click", function(){
+        overlayWindow.style.display = 'block'
+        var clone = prodImgOpen.cloneNode(true)
+        overlayWrapp.appendChild(clone)
+        function overlayWinOpacity(){
+            overlayWindow.style.opacity = '1'
+        }
+        setTimeout(overlayWinOpacity, 800)
+    })
+}
+
+overlayWindowClose.addEventListener("click", function(){
+    overlayWindow.style.opacity = '0'
+    function overlayWinOpacityHidden(){
+        overlayWindow.style.display = '' 
+    }
+    setTimeout(overlayWinOpacityHidden, 800)
+    document.querySelector('.overlay__wrapp .prod__img').remove()
 })
