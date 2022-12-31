@@ -348,6 +348,7 @@ body::-webkit-scrollbar {
 #product {
   box-sizing: border-box;
   padding: 10px 25px;
+  position: relative;
 }
 #product .title__prod {
   font-family: var(--main-font);
@@ -356,6 +357,49 @@ body::-webkit-scrollbar {
   font-size: 25px;
   color: var(--main-text-color);
   margin: 25px 15px;
+}
+#product .overlay {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  left: 0;
+  z-index: 10;
+  display: none;
+  overflow: auto;
+  opacity: 0;
+  transition: opacity 0.8s;
+}
+#product .overlay .close__overlay {
+  width: 40px;
+  height: 40px;
+  background: var(--main-text-color);
+  box-sizing: border-box;
+  padding: 5px;
+  margin-left: auto;
+}
+#product .overlay .close__overlay img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+#product .overlay .overlay__wrapp {
+  max-width: 960px;
+  max-height: 640px;
+  margin: 20px auto 0 auto;
+  padding: 0 10px;
+}
+#product .overlay .overlay__wrapp img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+#product .overlay::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 #product .lazy__btn {
   font-family: var(--main-font);
@@ -411,7 +455,7 @@ body::-webkit-scrollbar {
   width: 100%;
   background: var(--main-text-color);
   box-sizing: border-box;
-  min-height: 300px;
+  height: 100%;
   margin: 10px;
   transition: 0.8s;
 }
@@ -420,6 +464,7 @@ body::-webkit-scrollbar {
   max-height: 270px;
   overflow: hidden;
   padding: 3px;
+  position: relative;
 }
 #product .tab-window .wrapp__prod .prod .prod__img img {
   width: 100%;
@@ -427,12 +472,30 @@ body::-webkit-scrollbar {
   -o-object-fit: contain;
      object-fit: contain;
 }
+@media (any-hover: hover) {
+  #product .tab-window .wrapp__prod .prod .prod__img:hover::before {
+    content: "";
+    position: absolute;
+    max-width: 295px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    background-image: url("../img/zoom.png");
+    background-size: 15%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: 0.8s;
+  }
+}
 #product .tab-window .wrapp__prod .prod .prod__name {
   font-family: var(--main-font);
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   color: var(--main-bg-color);
+  max-width: 200px;
+  padding: 0 5px;
+  text-align: center;
 }
 #product .tab-window .wrapp__prod .prod .prod__size {
   font-family: var(--main-font);
@@ -441,6 +504,11 @@ body::-webkit-scrollbar {
   font-size: 18px;
   color: var(--main-bg-color);
   display: flex;
+  max-width: 200px;
+  padding: 0 5px;
+  text-align: center;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
 }
 #product .tab-window .wrapp__prod .prod .prod__size span {
   margin: 0 5px 0 0;
@@ -551,7 +619,7 @@ body::-webkit-scrollbar {
   max-height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
-  margin: 15px;
+  margin: 10px;
   overflow: hidden;
   box-shadow: 0px 0px 15px 0px var(--main-text-color);
 }
@@ -926,6 +994,11 @@ body::-webkit-scrollbar {
   position: relative;
   border: 2px solid var(--main-bg-color);
 }
+#popup__product .form__popup-prod form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 #popup__product .form__popup-prod .item-prod {
   display: flex;
   flex-direction: column-reverse;
@@ -1076,10 +1149,26 @@ body::-webkit-scrollbar {
      object-fit: contain;
 }
 
+@media (max-width: 1300px) {
+  #product .tab-window .wrapp__prod .prod .prod__img::before {
+    content: "";
+    position: absolute;
+    max-width: 295px;
+    max-height: 270px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    background-image: url("../img/zoom.png");
+    background-size: 15%;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}
 @media (max-width: 768px) {
   #gallery__section #widget__gallery #gallery .wrapper__thumbnail {
     max-width: 210px;
     max-height: 210px;
+    margin: 5px;
   }
   #footer .footer__menu {
     display: none;
@@ -1119,7 +1208,7 @@ body::-webkit-scrollbar {
     margin: 5px;
   }
   #product .tab-window .wrapp__prod .prod {
-    max-width: 125px;
+    max-width: 140px;
     min-height: 190px;
   }
   #product .tab-window .wrapp__prod .prod .prod__name {
