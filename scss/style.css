@@ -1173,6 +1173,11 @@ body::-webkit-scrollbar {
   #footer .footer__menu {
     display: none;
   }
+  #header__first .overlay__one,
+#header__first .overlay__second,
+#header__first .overlay__free {
+    display: none;
+  }
 }
 @media (max-width: 767px) {
   #header .main__item {
