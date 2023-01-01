@@ -315,10 +315,12 @@
                 <img src="img/close.webp" alt="">  
             </div>
         </div>
-        <input type="text" placeholder="Ваше имя" class="form__area">
-        <input type="tel" placeholder="Ваш телефон" class="form__area">
-        <textarea placeholder="Комментарий" class="form__area"></textarea>
-        <button class="submit__btn">Отправить</button>
+        <form class="popup__first">
+            <input type="text" placeholder="Ваше имя" class="form__area" name="name">
+            <input type="tel" placeholder="Ваш телефон" class="form__area" name="phone">
+            <textarea placeholder="Комментарий" class="form__area" name="comment"></textarea>
+            <button type="submit" class="submit__btn">Отправить</button>
+        </form>
     </div>
     <div class="valid__form">
         <div class="close__valid">

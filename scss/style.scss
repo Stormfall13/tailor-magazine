@@ -825,6 +825,11 @@ body::-webkit-scrollbar{
                 }
             }
         }
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
         input{
             font-family: var(--main-font);
             font-style: normal;
