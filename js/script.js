@@ -303,7 +303,7 @@ const formPopupProd = document.querySelector('.form__popup-prod')
 const popupProduct = document.getElementById('popup__product')
 const validFormProd = document.querySelector('.valid__form-prod')
 const closeValidProd = document.querySelector('.close__valid-prod')
-
+const btnLocation = document.querySelector('.btn__location')
 
 for (let btnProdAll of btnProd){
     btnProdAll.addEventListener("click", function(){
@@ -321,7 +321,17 @@ for (let btnProdAll of btnProd){
     })
 }
 
+/* Map overlay */
 
+const closeMap = document.querySelector('.close__map')
+const popupMap = document.getElementById('popup__map')
+
+btnLocation.addEventListener('click', function(){
+    popupMap.style.display = 'block'
+})
+closeMap.addEventListener('click', function(){
+    popupMap.style.display = 'none'
+})
 
 const closeFormProd = document.querySelector('.close__form-prod')
 
@@ -393,3 +403,7 @@ overlayWindowClose.addEventListener("click", function(){
     setTimeout(overlayWinOpacityHidden, 800)
     document.querySelector('.overlay__wrapp .prod__img').remove()
 })
+
+
+
+

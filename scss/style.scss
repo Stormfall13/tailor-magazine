@@ -1051,6 +1051,21 @@ body::-webkit-scrollbar{
             cursor: pointer; 
             border: 0;
         }
+        .btn__location{
+            font-family: var(--main-font);
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            text-align: center;
+            color: var(--main-text-color);
+            background: var(--main-bg-color);
+            display: inline-block;
+            padding: 10px 0;
+            width: 217px;
+            margin: 10px auto 10px auto;
+            cursor: pointer; 
+            border: 0; 
+        }
         @media (any-hover: hover) {
             .submit__btn:hover{
                 transition: 0.6s;
@@ -1094,6 +1109,138 @@ body::-webkit-scrollbar{
     }
 }
 
+
+#popup__map{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: none;
+    background: var(--main-bg-color);
+    .close__map{
+        cursor: pointer;
+    }
+    #messageHeader {
+        font-family: var(--main-font);
+        font-weight: 400;
+        font-size: 20px;
+        color: var(--main-bg-color);
+        text-decoration: none;
+        margin: 5px 0;
+    }
+    
+    #footer {
+        background-color: var(--main-text-color);
+        padding: 12px;
+        flex-direction: column;
+    }
+    
+    #message {
+        font-family: var(--main-font);
+        font-weight: 500;
+        font-size: 20px;
+        color: var(--main-bg-color);
+        text-decoration: none;
+        margin: 5px 0; 
+    }
+    
+    #map {
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 15px;
+        width: 100%;
+        height: 500px; 
+        position: relative;
+    }
+    
+    #header {
+        max-width: 432px;
+        margin: 12px 10px 12px 12px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    
+    #button {
+        padding: .2em 0.6em;
+        font-family: var(--main-font);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        color: var(--main-bg-color);
+        background: var(--main-text-color);
+        cursor: pointer; 
+    }
+    
+    @media (max-width: 480px) {
+        #button{
+            margin: 20px 0 20px 0; 
+        }
+    }
+    
+    
+    .input {
+        font-family: var(--main-font);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        color: var(--main-bg-color);
+        border: 1px solid var(--main-bg-color);
+        outline: none;
+        padding: 4px 5px;
+        max-width: 195px;
+        width: 100%;
+        background: var(--main-text-color);
+    }
+
+    .input::placeholder{
+        font-family: var(--main-font);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        color: var(--main-bg-color);  
+    }
+    
+    .input:focus {
+        outline: none;
+        border: 1px solid #fdd734;
+        box-shadow: 0 0 1px 1px #fdd734;
+    }
+    
+    .input_error, .input_error:focus {
+        outline: none;
+        border: 1px solid #f33;
+        box-shadow: 0 0 1px 1px #f33;
+    }
+    .wrapp__map{
+        display: flex;
+        flex-direction: column;
+    }
+    #notice {
+        margin: 0;
+        color: #f33;
+        display: none;
+    } 
+    
+    .btn__getMap{
+        font-family: var(--main-font);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        text-align: center;
+        color: var(--main-text-color);
+        background: var(--main-bg-color);
+        display: inline-block;
+        padding: 10px 0;
+        width: 217px;
+        margin: 10px auto 10px auto;
+        cursor: pointer; 
+        border: 0;  
+    }
+}
 
 @media (max-width: 1300px) {
     #product{
@@ -1251,6 +1398,32 @@ body::-webkit-scrollbar{
             width: 25px;
             height: 25px;
         }
+    }
+}
+
+@media (max-width: 480px) {
+    #popup__product{
+        form{
+            width: 100%;
+        }
+        .form__popup-prod{
+            input{
+                margin: 7px auto; 
+                padding: 5px 10px;
+                font-size: 14px;
+            } 
+            .submit__btn-prod{
+                font-size: 16px;
+                width: 180px;
+                margin: 6px auto 6px auto; 
+            }
+            .btn__location{
+                font-size: 16px;
+                width: 180px;
+                margin: 6px auto 6px auto;  
+            }
+        }
+        
     }
 }
 

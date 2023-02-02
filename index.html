@@ -8,6 +8,9 @@
 <meta name="keywords" content="Пошив оджежды">
 <link rel="stylesheet" href="scss/style.css">
 <link rel="stylesheet" href="scss/swiper-bundle.css">
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=2829cfc0-bcee-4f3d-951f-748802556ea0" type="text/javascript"></script>
+<script src="https://yandex.st/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
+<script src="input_validation.js" type="text/javascript"></script>
 <title>Пошив одежды</title>
 </head>
 <body>
@@ -348,6 +351,8 @@
             <input type="text" name="size__prod" placeholder="Укажите размер" class="form__prod">
             <div class="input__title">Цена</div>
             <input type="text" name="cena__prod" class="form__prod cena__prod"  readonly="none">
+            <input type="text">
+            <div class="btn__location">Прикрепить адрес</div>
             <button type="submit" class="submit__btn-prod">Отправить</button>
         </form>
     </div>
@@ -359,9 +364,29 @@
     </div>
 </div>
 
+<div id="popup__map">
+    <div class="close__map">
+        <img src="img/close.webp" alt="">
+    </div>
+    <div class="wrapp__map">
+        <p id="notice">Адрес не найден</p>
+        <div id="header">
+            <input type="text" id="suggest" class="input" placeholder="Введите адрес">
+            <button type="submit" id="button">Проверить</button>
+        </div>
+    </div>
+    <div id="map"></div>
+    <div id="footer">
+        <div id="messageHeader"></div>
+        <div id="message"></div>
+        <div class="btn__getMap">Прикрепить</div>
+    </div> 
+</div>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="js/swiper-bundle.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/map.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>
