@@ -338,8 +338,9 @@
             </div>
         </div>
         <form class="catalog__form">
-            <input type="text" name="name" placeholder="Ваше имя" class="form__prod">
-            <input type="tel" name="phone" placeholder="Ваш телефон" class="form__prod">
+            <div class="err">Заполните поле</div>
+            <input type="text" name="name" placeholder="Ваше имя" class="form__prod validate">
+            <input type="tel" name="phone" placeholder="Ваш телефон" class="form__prod validate__phone">
             <div class="input__title">Название товара</div>
             <input type="text" name="prod__name" class="form__prod names__prod" readonly="none">
             <div class="wrapp__size"><span>Размеры: </span>

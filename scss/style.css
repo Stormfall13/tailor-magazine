@@ -1113,20 +1113,11 @@ body::-webkit-scrollbar {
   cursor: pointer;
   border: 0;
 }
-#popup__product .form__popup-prod .btn__location {
-  font-family: var(--main-font);
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  text-align: center;
-  color: var(--main-text-color);
-  background: var(--main-bg-color);
-  display: inline-block;
-  padding: 10px 0;
-  width: 217px;
-  margin: 10px auto 10px auto;
-  cursor: pointer;
-  border: 0;
+#popup__product .form__popup-prod .err {
+  font-size: 16px;
+  color: #f00;
+  margin: 0 auto 0 0;
+  display: none;
 }
 @media (any-hover: hover) {
   #popup__product .form__popup-prod .submit__btn:hover {

@@ -311,7 +311,6 @@ for (let btnProdAll of btnProd){
             namesProd.value = prodElAll.querySelector('.prod__name').textContent.trim()
             cenaProd.value = prodElAll.querySelector('.cena').textContent.trim()
             sizeFormActual.innerHTML = prodElAll.querySelector('.size').textContent
-            
         } 
         function popupProdOpacity(){
             popupProduct.style.opacity = '1'
@@ -322,21 +321,6 @@ for (let btnProdAll of btnProd){
 }
 
 
-const closeFormProd = document.querySelector('.close__form-prod')
-
-closeFormProd.addEventListener("click", function(){
-    namesProd.value = ''
-    cenaProd.value = ''
-    sizeFormActual.innerHTML = ''
-    for(let inputFprod of inputFormProd){
-        inputFprod.value = ''
-    }
-    function popupProdOpacity(){
-        popupProduct.style.display = ''
-    }
-    setTimeout(popupProdOpacity, 600)
-    popupProduct.style.opacity = ''
-})
 
 submitBtnProd.addEventListener("click", function(){
     formPopupProd.style.display = 'none'
@@ -344,7 +328,7 @@ submitBtnProd.addEventListener("click", function(){
         namesProd.value = ''
         cenaProd.value = ''
         sizeFormActual.innerHTML = ''
-        for(inputFprod of inputFormProd){
+        for(let inputFprod of inputFormProd){
             inputFprod.value = ''
         }
     }
@@ -392,6 +376,8 @@ overlayWindowClose.addEventListener("click", function(){
     setTimeout(overlayWinOpacityHidden, 800)
     document.querySelector('.overlay__wrapp .prod__img').remove()
 })
+
+
 
 
 
