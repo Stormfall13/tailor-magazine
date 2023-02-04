@@ -321,17 +321,6 @@ for (let btnProdAll of btnProd){
     })
 }
 
-/* Map overlay */
-
-const closeMap = document.querySelector('.close__map')
-const popupMap = document.getElementById('popup__map')
-
-btnLocation.addEventListener('click', function(){
-    popupMap.style.display = 'block'
-})
-closeMap.addEventListener('click', function(){
-    popupMap.style.display = 'none'
-})
 
 const closeFormProd = document.querySelector('.close__form-prod')
 
